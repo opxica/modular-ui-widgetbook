@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:modular_ui_widgetbook/components/buttons.dart';
 import 'package:modular_ui_widgetbook/components/cards.dart';
+import 'package:modular_ui_widgetbook/components/dialogue.dart';
 import 'package:modular_ui_widgetbook/components/tabs.dart';
 import 'package:modular_ui_widgetbook/enums/card_variant.dart';
 import 'package:modular_ui_widgetbook/enums/button_variant.dart';
@@ -242,7 +243,22 @@ class WidgetBookWrapper extends StatelessWidget {
                   },
                 )
               ],
-            )
+            ),
+            WidgetbookComponent(name: "Dialogue", useCases: <WidgetbookUseCase>[
+              WidgetbookUseCase(
+                  name: "Dialogue",
+                  builder: (context) {
+                    return Dialogues(
+                      diaText: context.knobs
+                          .string(label: "Dialog text", initialValue: 'Dialog'),
+                      titleHeadText: context.knobs.string(
+                          label: "Alert Head Text",
+                          initialValue: 'Are you sure want to change this'),
+                      allText: context.knobs
+                          .string(label: "Alert Text", initialValue: 'ALERT'),
+                    );
+                  })
+            ])
           ],
         ),
       ],
