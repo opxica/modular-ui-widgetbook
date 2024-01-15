@@ -2,7 +2,8 @@ import 'package:modular_ui/modular_ui.dart';
 import 'package:flutter/material.dart';
 import 'package:modular_ui_widgetbook/enums/button_variant.dart';
 
-class Buttons extends StatelessWidget {
+class Buttons extends StatelessWidget 
+{
   const Buttons({
     super.key,
     required this.text,
